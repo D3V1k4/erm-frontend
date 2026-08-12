@@ -1,32 +1,192 @@
-# React + TypeScript + Vite
+# NexERP — Wholesale Operations & CRM Portal
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+A modern, responsive frontend for a wholesale operations and CRM management platform.
 
-Currently, two official plugins are available:
+NexERP provides a centralized interface for managing customers, products, inventory, sales challans and business follow-ups through a clean, professional B2B dashboard.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+---
 
-## React Compiler
+##  Features
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+###  Authentication
+- Professional login interface
+- Email and password authentication
+- Password visibility toggle
+- Form validation
+- Authentication loading and error states
+- Protected application interface
+  
 
-## Expanding the Oxlint configuration
+###  Dashboard
+- Business overview dashboard
+- Customer summary
+- Product summary
+- Pending challans
+- Low-stock overview
+- Recent operational information
 
-If you are developing a production application, we recommend enabling type-aware lint rules by installing `oxlint-tsgolint` and editing `.oxlintrc.json`:
+###  Customer CRM
+- Customer listing
+- Customer search
+- Customer information management
+- Customer type and status
+- Customer details
+- Follow-up information
+- Notes and business information
 
-```json
-{
-  "$schema": "./node_modules/oxlint/configuration_schema.json",
-  "plugins": ["react", "typescript", "oxc"],
-  "options": {
-    "typeAware": true
-  },
-  "rules": {
-    "react/rules-of-hooks": "error",
-    "react/only-export-components": ["warn", { "allowConstantExport": true }]
-  }
-}
-```
+###  Product Management
+- Product listing
+- Product search
+- Product information
+- SKU management
+- Category information
+- Unit pricing
+- Stock visibility
+- Low-stock and out-of-stock indicators
 
-See the [Oxlint rules documentation](https://oxc.rs/docs/guide/usage/linter/rules) for the full list of rules and categories.
+###  Inventory
+- Inventory overview
+- Stock information
+- Inventory movement history
+- IN / OUT movement tracking
+- Quantity and movement details
+- Low-stock visibility
+
+###  Sales Challans
+- Challan listing
+- Create new challans
+- Add multiple products
+- Customer selection
+- Quantity management
+- Available-stock visibility
+- Draft challans
+- Confirmed challans
+- Cancelled challans
+- Insufficient-stock validation
+- Challan detail view
+
+###  Responsive Design
+The application is designed to work across:
+
+- Desktop
+- Laptop
+- Tablet
+- Mobile devices
+
+The navigation and layouts adapt according to screen size.
+
+---
+
+##  UI/UX
+
+The frontend follows a professional B2B SaaS design approach with:
+
+- Clean dashboard layouts
+- Consistent spacing
+- Reusable UI components
+- Responsive navigation
+- Clear status badges
+- Search and filtering
+- Loading states
+- Empty states
+- Error states
+- Confirmation dialogs
+- Toast notifications
+- User-friendly validation
+
+The focus is on making business operations easy to understand and perform.
+
+---
+
+##  Tech Stack
+
+### Frontend
+
+- React
+- TypeScript
+- Vite
+- React Router
+- Axios
+- CSS
+
+### Backend Integration
+
+The frontend is structured to communicate with a REST API through a centralized API service layer.
+
+### Database
+
+The complete application is designed to integrate with:
+
+- PostgreSQL
+- Prisma
+- Neon PostgreSQL
+
+---
+
+## Project Structure
+
+```text
+erm-frontend/
+│
+├── public/
+│
+├── src/
+│   │
+│   ├── assets/
+│   │
+│   ├── components/
+│   │   ├── customers/
+│   │   │   └── CustomerForm.tsx
+│   │   │
+│   │   ├── layout/
+│   │   │   ├── AppShell.tsx
+│   │   │   ├── Sidebar.tsx
+│   │   │   └── TopBar.tsx
+│   │   │
+│   │   └── ui/
+│   │       ├── Badge.tsx
+│   │       ├── ConfirmDialog.tsx
+│   │       ├── Modal.tsx
+│   │       ├── PageHeader.tsx
+│   │       ├── Pagination.tsx
+│   │       ├── SearchInput.tsx
+│   │       └── States.tsx
+│   │
+│   ├── context/
+│   │   ├── AuthContext.tsx
+│   │   └── ToastContext.tsx
+│   │
+│   ├── pages/
+│   │   ├── LoginPage.tsx
+│   │   ├── DashboardPage.tsx
+│   │   ├── CustomersPage.tsx
+│   │   ├── CustomerDetailPage.tsx
+│   │   ├── ProductsPage.tsx
+│   │   ├── InventoryPage.tsx
+│   │   ├── ChallansPage.tsx
+│   │   ├── ChallanCreatePage.tsx
+│   │   └── ChallanDetailPage.tsx
+│   │
+│   ├── services/
+│   │   ├── api.ts
+│   │   ├── auth.service.ts
+│   │   ├── customer.service.ts
+│   │   ├── product.service.ts
+│   │   ├── inventory.service.ts
+│   │   └── challan.service.ts
+│   │
+│   ├── types/
+│   │   └── index.ts
+│   │
+│   ├── App.tsx
+│   ├── App.css
+│   ├── index.css
+│   └── main.tsx
+│
+├── .gitignore
+├── index.html
+├── package.json
+├── package-lock.json
+├── tsconfig.json
+├── vite.config.ts
+└── README.md
